@@ -31,7 +31,7 @@ $(function(){
             };
         }
     });
-    //点击组测按钮进行注册
+    //点击注册按钮进行注册
     $('#form-reg').on('submit',function(e){
         e.preventDefault();
         //发起POST请求

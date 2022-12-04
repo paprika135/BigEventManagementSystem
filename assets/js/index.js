@@ -1,12 +1,9 @@
-$(function(){
    //发ajax请求
-   function getUserInfo(){
+function getUserInfo(){
     $.ajax({
         method:"GET",
         url:"/my/userinfo",
-        headers:{
-            Authorization:localStorage.getItem('token') || ''
-        },success:function(res){
+        success:function(res){
             if(res.status !== 0){
                 return layui.layer.msg('获取用户信息失败！');
             }
@@ -16,7 +13,6 @@ $(function(){
     });
    };
 
-   getUserInfo();
 
    function renderAvatar(user){
     //这里还要写欢迎文本
@@ -32,6 +28,8 @@ $(function(){
     };
    };
 
+$(function(){
+   getUserInfo();
    //实现退出功能
    $('#quit').on('click',function(){
     layer.confirm('确定退出吗？', {icon: 3, title:'提示'}, function(index){
@@ -43,3 +41,4 @@ $(function(){
       });
    });
 });
+
