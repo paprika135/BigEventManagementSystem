@@ -28,8 +28,10 @@ function getUserInfo(){
     };
    };
 
+
+
 $(function(){
-   getUserInfo();
+    getUserInfo();
    //实现退出功能
    $('#quit').on('click',function(){
     layer.confirm('确定退出吗？', {icon: 3, title:'提示'}, function(index){

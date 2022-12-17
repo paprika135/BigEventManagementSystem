@@ -37,8 +37,8 @@ $(function(){
     //重置表单数据
     $('#btnReset').on('click', function(e) {
         // 阻止表单的默认重置行为
-        e.preventDefault()
-        initUserInfo()
+        e.preventDefault();
+        initUserInfo();
       });
 
 

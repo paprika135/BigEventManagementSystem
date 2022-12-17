@@ -35,20 +35,25 @@ $(function(){
     $('#form-reg').on('submit',function(e){
         e.preventDefault();
         //发起POST请求
-        $.post('/api/reguser',{username:$('.reg-box [name=username]').val(),password:$('.reg-box [name=password]').val()},function(res){
+        $.ajax({
+            method:'POST',
+            url:'/api/reguser',
+            data:{username:$('.reg-box [name=username]').val(),password:$('.reg-box [name=password]').val()},
+           success:function(res){
             if(res.status !== 0){
                 return layer.msg(res.message);
             }
 
             layer.msg('注册成功，请登录！');
             $('#link_login').click();
+           }
         });
+        
     });
 
     //实现登录
     $('#form_login').submit(function(e){
         e.preventDefault();
-        console.log(11);
         $.ajax({
             url: '/api/login',
             method:'POST',
